@@ -41,14 +41,6 @@ void setup() {
 }
 
 void loop() {
-  if(digitalRead(5) == true){ //leitura
-      digitalWrite(6, true); //escrita
-      Serial.println("EH ISSO");
-  } else {
-      digitalWrite(6, false);
-      Serial.println("NAO EH ISSO");
-  }
-
   for(int j = 0; j<255; j++){
    analogWrite(6, j); 
    delay(2);
