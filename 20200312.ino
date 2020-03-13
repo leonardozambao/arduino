@@ -17,15 +17,18 @@
 //i = digitalRead(6);
 //}
 
-void setup(){
+void setup() {
+  Serial.begin(9600);
   pinMode(4, INPUT); //entrada
   pinMode(5, OUTPUT); //saida
 }
 
-void loop(){
-    if(digitalRead(4) == true){ //leitura
+void loop() {
+  if(digitalRead(4) == true){ //leitura
       digitalWrite(5, true); //escrita
-    } else {
+      Serial.println("EH ISSO");
+  } else {
       digitalWrite(5, false);
-    }
+      Serial.println("NAO EH ISSO");
+  }
 }
