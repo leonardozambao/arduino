@@ -32,3 +32,29 @@ void loop() {
       Serial.println("NAO EH ISSO");
   }
 }
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(5, INPUT); //entrada
+  pinMode(6, OUTPUT); //saida
+}
+
+void loop() {
+  if(digitalRead(5) == true){ //leitura
+      digitalWrite(6, true); //escrita
+      Serial.println("EH ISSO");
+  } else {
+      digitalWrite(6, false);
+      Serial.println("NAO EH ISSO");
+  }
+
+  for(int j = 0; j<255; j++){
+   analogWrite(6, j); 
+   delay(2);
+  }
+  for(int l = 255; l>0; l--){
+   analogWrite(6, l); 
+   delay(2);
+  }
+}
